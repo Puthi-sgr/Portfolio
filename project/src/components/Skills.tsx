@@ -1,30 +1,83 @@
-import React from "react";
-import { Code, Palette, Database, Globe } from "lucide-react";
+import {
+  Code,
+  Server,
+  Wrench,
+  MessageCircle,
+  Briefcase,
+  Sparkles,
+  ClipboardCheck,
+  GraduationCap,
+} from "lucide-react";
 
 const skills = [
   {
-    category: "Frontend Development",
+    category: "Frontend Engineering",
     icon: Code,
-    items: ["React", "TypeScript", "Tailwind CSS", "MUI"],
+    items: ["React.js", "TypeScript", "Tailwind CSS", "CSS frameworks", "MUI"],
     level: 4,
   },
   {
-    category: "Design",
-    icon: Palette,
-    items: ["UI/UX Design", "Figma", "Canva"],
+    category: "Backend & APIs",
+    icon: Server,
+    items: ["Node.js", "PHP / Laravel", "PostgreSQL", "JWT / OAuth 2", "Apache"],
     level: 3,
   },
   {
-    category: "Backend Development",
-    icon: Database,
-    items: ["Node.js", "MongoDB", "REST APIs"],
+    category: "DevOps & Tooling",
+    icon: Wrench,
+    items: ["Docker", "GitHub Actions", "CI/CD pipelines", "Ubuntu", "Git"],
     level: 3,
   },
   {
-    category: "Other Skills",
-    icon: Globe,
-    items: ["Git", "Firebase"],
-    level: 2,
+    category: "Languages & Communication",
+    icon: MessageCircle,
+    items: [
+      "Khmer – Native",
+      "English – Advanced",
+      "Verbal & written communication",
+      "Adaptable to new tools",
+      "Hardworking mindset",
+    ],
+    level: 4,
+  },
+];
+
+const highlights = [
+  {
+    title: "Current Roles & Projects",
+    icon: Briefcase,
+    items: [
+      "Program Developer – 300Derm (Jul 2025 – Present)",
+      "Program Developer – Jomney Food Delivery Software",
+      "Project Officer Intern – Angkor Social Innovation Park (Dec 2024 – Feb 2025)",
+    ],
+  },
+  {
+    title: "Impact & Leadership",
+    icon: Sparkles,
+    items: [
+      "Led a 300-tree mangrove restoration in Kampot with NGOs, officials, and 15 volunteers",
+      "Raised eco awareness and secured partnerships, funding, and logistics via 300riel300derm.com",
+      "Proposed and delivered a four-part 'Youth & Innovation' webinar with five guest experts",
+    ],
+  },
+  {
+    title: "Delivery & Engineering Strengths",
+    icon: ClipboardCheck,
+    items: [
+      "Integrated one-tap checkout and live dashboards through a third-party payment gateway",
+      "Built, optimized, and debugged full-stack web apps, restoring uptime with log-based fixes",
+      "Ran CI/CD builds end-to-end while outlining scopes, budgets, and timelines for stakeholders",
+    ],
+  },
+  {
+    title: "Education & Reference",
+    icon: GraduationCap,
+    items: [
+      "B.A. in Computer Science – Royal University of Phnom Penh",
+      "B.A. in Professional Communication – Institute of Foreign Languages (Evening shift)",
+      "Reference: Mrs. Mao Socheat – Project Manager at Nokor Web | +855 12 777 467",
+    ],
   },
 ];
 
@@ -71,6 +124,32 @@ export default function Skills() {
                     >
                       <span className="w-2 h-2 bg-gradient-to-r from-purple-600 to-blue-500 rounded-full mr-2"></span>
                       {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+          {highlights.map((highlight, index) => {
+            const Icon = highlight.icon;
+            return (
+              <div
+                key={index}
+                className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+              >
+                <div className="flex items-center mb-4">
+                  <Icon className="w-6 h-6 text-purple-600 dark:text-purple-400 mr-3" />
+                  <h3 className="text-xl font-semibold dark:text-white">
+                    {highlight.title}
+                  </h3>
+                </div>
+                <ul className="space-y-3 text-gray-600 dark:text-gray-300">
+                  {highlight.items.map((item, itemIndex) => (
+                    <li key={itemIndex} className="flex items-start">
+                      <span className="w-2 h-2 mt-1.5 bg-gradient-to-r from-purple-600 to-blue-500 rounded-full mr-3"></span>
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>

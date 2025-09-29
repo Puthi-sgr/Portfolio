@@ -1,7 +1,8 @@
-import React from "react";
 import { ExternalLink } from "lucide-react";
 import project1 from "../assets/project1.png";
 import project2 from "../assets/project2.png";
+import project3 from "../assets/project3.png";
+import project4 from "../assets/project4.png";
 
 const projects = [
   {
@@ -19,6 +20,25 @@ const projects = [
     image: project2,
     tags: ["React", "Tailwind CSS", "TypeScript"],
     xp: 35,
+    link: "https://300riel300derm.com/",
+  },
+  {
+    title: "Animated engagement invitation",
+    description:
+      "Immersive invitation experience with looping GIF backdrop that highlights the couple's story and event details.",
+    image: project3,
+    tags: ["React", "Tailwind CSS", "TypeScript"],
+    xp: 40,
+    link: "https://manithpichta.online/",
+  },
+  {
+    title: "Banh Jok Delivery",
+    description:
+      "End-to-end food ordering experience featuring animated menu highlights, live order tracking, and an irresistible street-food brand story.",
+    image: project4,
+    tags: ["React", "Tailwind CSS", "TypeScript"],
+    xp: 45,
+    link: "https://puthi-sgr.github.io/Banhjok/",
   },
 ];
 
@@ -58,6 +78,17 @@ export default function Work() {
                         </span>
                       ))}
                     </div>
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-purple-500 hover:bg-purple-600 text-sm font-semibold rounded-lg shadow-lg transition"
+                      >
+                        Visit site
+                        <ExternalLink size={16} />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
